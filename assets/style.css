@@ -61,3 +61,11 @@ h1 {
 	margin-bottom: 1rem;
 	color: #37352F;
 }
+
+/* || INPUT */
+
+input {
+	border: 0.5px lightgrey solid;
+	padding: 12px;
+	border-radius: 8px
+}
