@@ -1,0 +1,63 @@
+/* || TYPOGRAPHY */
+
+@font-face {
+	font-family: 'NeueBit';
+	src: url('PPNeuebit/PPNeueBit-Regular.woff2');
+	font-weight: 400;
+ }
+
+/*|| VARIABLES */ 
+
+/* FOR MOBILE */
+
+:root{
+
+/* typescale */
+  
+    --text-xl: calc(var(--text-base)*6);
+	--text-lg: calc(var(--text-base)*1.125);
+	--text-base: 30px;
+	--text-sm: calc(var(--text-base)*0.875);
+	--text-xs: calc(var(--text-base)*0.3);
+	
+	--display: block;
+}
+
+/* || DESKTOP */
+
+@media (min-width:650px) {
+    :root {
+	
+	/* typescale */
+    
+    }
+}
+
+/* || PARTS OF THE WEBSITE */
+
+body {
+	font-family: 'Figtree', serif;
+	background-color: #F4F4F4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+.window {
+	width: 80%;
+	max-width: 600px;
+	background-color: white;
+	border-radius: 16px;
+	box-shadow: 0px 25px 50px -12px rgba(97, 57, 48, 0.25);
+	padding: 2rem;
+  }
+
+/* || TYPOGRAPHY*/
+
+h1 {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	color: #37352F;
+}
