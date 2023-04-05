@@ -21,6 +21,9 @@
 	--text-xs: calc(var(--text-base)*0.3);
 	
 	--display: block;
+
+	--border-radius: 8px;
+	--small-padding:12px;
 }
 
 /* || DESKTOP */
@@ -52,7 +55,7 @@ body {
 	border-radius: 16px;
 	box-shadow: 0px 25px 50px -12px rgba(97, 57, 48, 0.25);
 	padding: 2rem;
-  }
+}
 
 /* || TYPOGRAPHY*/
 
@@ -66,6 +69,28 @@ h1 {
 
 input {
 	border: 0.5px lightgrey solid;
-	padding: 12px;
-	border-radius: 8px
+	padding: var(--small-padding);
+	border-radius: var(--border-radius);
+	cursor: pointer;
+}
+
+input:hover {
+	outline: 2px solid rgba(173, 216, 230, 0.591);
+}
+
+/* || BUTTON */
+
+button {
+	background-color: #37352F;
+	color: white;
+	border-radius: var(--border-radius);
+	padding: var(--small-padding);
+}
+
+button:hover {
+	background-color: #1a1917;
+	color: white;
+	border-radius: var(--border-radius);
+	padding: var(--small-padding);
+	transition: 0.3s ease-in;
 }
