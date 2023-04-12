@@ -4,8 +4,6 @@ const date1 = document.getElementById('date1');
 const date2 = document.getElementById('date2');
 const result = document.getElementById('result');
 
-
-
 function calculateDays() {
      /* Booger's birthday is "March 18, 2015"
     Simba's birthday is "September 8, 2017". 
@@ -19,7 +17,6 @@ function calculateDays() {
 
     const date1Value = new Date(date1.value);
     const date2Value = new Date(date2.value);
-    const result = document.getElementById('result');
    
     console.log("Date 1:" + date1Value)
     console.log("Date 2:" + date2Value)
@@ -54,8 +51,29 @@ function calculateDays() {
         
     }
 
+    /* checks if there are values in both date fields
+    if both date fields are filled, the button is enabled
+    otherwise, the button is disabled  */
+
+function checkInput() {
+    if (date1.value && date2.value) {
+        calculateButton.disabled = false;
+    } else {
+        calculateButton.disabled = true;
+    }
+    }
 
 
+    /* Whenever you put in or remove a date, the checkInput() 
+    function is called to check if the button should be enabled or disabled. */
+
+    date1.addEventListener("change", checkInput);
+    date2.addEventListener("change", checkInput);
 
 
-    
+    /*finds the button on the page*/
+    const calculateButton = document.getElementById("calculateButton");
+
+    /*like tying the 'calculateButton' button and to the 'CalculateDays' function, and the string is only pulled when the button is clicked*/
+
+    calculateButton.addEventListener("click", calculateDays);

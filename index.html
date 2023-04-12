@@ -11,15 +11,18 @@
 	</head>
 
 <body>
-    <div class="window">
-        <h1>Days calculator</h1>
-		<input id="date1" name="date1" type="date">
-		<input id="date2" name="date2" type="date">
-		<button id="calculate">Calculate Days</button>
+	<div class="browser-window">
+        <input type="date" id="date1">
+        <input type="date" id="date2">
+
+		<div class="tooltip">
+			<button id="calculateButton" disabled>Calculate Days</button>
+			<span class="tooltip-text">Oops! Looks like you forgot to enter some dates. Please pick a start and end date</span>
+		  </div>
 
 		<div class="result" id="result"></div>
-
     </div>
+
 
     <script>
 
