@@ -130,3 +130,23 @@ function checkNewDateInput() {
     newDateResult.textContent = `${days} days ${operationWord} ${inputDateFormatted} is ${formattedDate}`;
 
     });
+
+// TABS //s
+const tab1 = document.getElementById("tab1");
+const tab2 = document.getElementById("tab2");
+const browserWindow1 = document.getElementsByClassName("tab-content")[0];
+const browserWindow2 = document.getElementsByClassName("tab-content")[1];
+
+tab1.addEventListener("click", () => {
+  tab1.classList.add("active");
+  tab2.classList.remove("active");
+  browserWindow1.classList.remove("hidden");
+  browserWindow2.classList.add("hidden");
+});
+
+tab2.addEventListener("click", () => {
+  tab2.classList.add("active");
+  tab1.classList.remove("active");
+  browserWindow1.classList.add("hidden");
+  browserWindow2.classList.remove("hidden");
+});
