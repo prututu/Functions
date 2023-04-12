@@ -77,3 +77,56 @@ function checkInput() {
     /*like tying the 'calculateButton' button and to the 'CalculateDays' function, and the string is only pulled when the button is clicked*/
 
     calculateButton.addEventListener("click", calculateDays);
+
+
+
+const addButton = document.getElementById("addButton");
+const subtractButton = document.getElementById("subtractButton");
+const daysInput = document.getElementById("days");
+const inputDate = document.getElementById("inputDate");
+const calculateNewDateButton = document.getElementById("calculateNewDate");
+const newDateResult = document.getElementById("newDateResult");
+let operation = "";
+
+addButton.addEventListener("click", () => {
+    operation = "add";
+    checkNewDateInput();
+    });
+
+subtractButton.addEventListener("click", () => {
+    operation = "subtract";
+    checkNewDateInput();
+    });
+
+    daysInput.addEventListener("input", checkNewDateInput);
+    inputDate.addEventListener("change", checkNewDateInput);
+
+function checkNewDateInput() {
+    if (operation && daysInput.value && inputDate.value) {
+    calculateNewDateButton.disabled = false;
+    } else {
+    calculateNewDateButton.disabled = true;
+    }
+    }
+
+    calculateNewDateButton.addEventListener("click", () => {
+    const days = parseInt(daysInput.value);
+    const date = new Date(inputDate.value);
+
+    if (operation === "add") {
+    date.setDate(date.getDate() + days);
+    } else if (operation === "subtract") {
+    date.setDate(date.getDate() - days);
+    }
+
+    const formattedDate = date.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric"
+    });
+
+    const inputDateFormatted = new Date(inputDate.value).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+    const operationWord = operation === "add" ? "after" : "before";
+    newDateResult.textContent = `${days} days ${operationWord} ${inputDateFormatted} is ${formattedDate}`;
+
+    });

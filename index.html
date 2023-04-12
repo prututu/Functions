@@ -11,6 +11,7 @@
 	</head>
 
 <body>
+	<!-- DAYS BETWEEN -->
 	<div class="browser-window">
         <input type="date" id="date1">
         <input type="date" id="date2">
@@ -23,7 +24,27 @@
 		<div class="result" id="result"></div>
     </div>
 
-
+	<!-- ADD/SUBTRACT DAYS -->
+	<div class="browser-window">
+		<h2 class="browser-heading">Date Calculator - Add or Subtract Days</h2>
+		<div>
+		  <button id="addButton">Add</button>
+		  <button id="subtractButton">Subtract</button>
+		</div>
+		<div>
+		  <label for="days">Days:</label>
+		  <input type="number" id="days" min="0">
+		</div>
+		<div>
+		  <label for="inputDate">Date:</label>
+		  <input type="date" id="inputDate">
+		</div>
+		<div>
+		  <button id="calculateNewDate" disabled>Calculate New Date</button>
+		</div>
+		<div id="newDateResult"></div>
+	
+	</div>
     <script>
 
     </script>
