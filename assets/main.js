@@ -131,7 +131,8 @@ function checkNewDateInput() {
 
     });
 
-// TABS //s
+// TABS
+
 const tab1 = document.getElementById("tab1");
 const tab2 = document.getElementById("tab2");
 const browserWindow1 = document.getElementsByClassName("tab-content")[0];
@@ -149,4 +150,25 @@ tab2.addEventListener("click", () => {
   tab1.classList.remove("active");
   browserWindow1.classList.add("hidden");
   browserWindow2.classList.remove("hidden");
+});
+
+// TODAY BUTTON
+
+const todayButton1 = document.getElementById("todayButton1");
+const todayButton2 = document.getElementById("todayButton2");
+
+function setToday(inputField) {
+  const today = new Date();
+  const todayISOString = today.toISOString().substring(0, 10);
+  inputField.value = todayISOString;
+}
+
+todayButton1.addEventListener("click", () => {
+  setToday(date1);
+  checkInput();
+});
+
+todayButton2.addEventListener("click", () => {
+  setToday(date2);
+  checkInput();
 });

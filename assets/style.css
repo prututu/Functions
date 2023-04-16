@@ -91,6 +91,24 @@ button {
 	cursor: not-allowed;
   }
 
+/* || TODAY BUTTON*/
+
+.today-button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 5px 10px;
+	font-size: 14px;
+	margin-left: 10px;
+	color: #333;
+	transition: 0.3s;
+  }
+  
+  .today-button:hover {
+	color: #555;
+	background-color: transparent;
+  }
+
 /* || INPUT */
 
 input[type="date"] {
@@ -160,6 +178,7 @@ opacity: 0;
   
   .tab-button {
 	background-color: #f1f1f1;
+	color: #37352F;
 	border: none;
 	cursor: pointer;
 	padding: 10px 20px;
