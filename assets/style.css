@@ -197,3 +197,14 @@ opacity: 0;
 	display: none;
   }
   
+/*|| Blue */
+
+.blue-text {
+	color:blue;
+	font-family:monospace;
+}
+
+.yellow-text {
+	color:gold;
+	font-family:'Times New Roman', Times, serif
+}

@@ -1,8 +1,15 @@
-// define important things: date 1, date 2, and result //
+
+// --CALCULATE DAYS BETWEEN DATES-- 
+// define important things: date 1, date 2, and result
 
 const date1 = document.getElementById('date1');
 const date2 = document.getElementById('date2');
+
 const result = document.getElementById('result');
+const resultstext = document.getElementById("resultstext");
+
+let now = moment();
+console.log(now.format("YYYY MM DD"));
 
 function calculateDays() {
      /* Booger's birthday is "March 18, 2015"
@@ -20,6 +27,17 @@ function calculateDays() {
    
     console.log("Date 1:" + date1Value)
     console.log("Date 2:" + date2Value)
+
+    console.log(date1.value)
+    let firstdate = moment(date1.value, "YYYY-MM-DD");
+    console.log(firstdate.format("YYYY MM DD - hh:mm:ss a"));
+
+    console.log(date2.value)
+    let seconddate = moment(date2.value, "YYYY-MM-DD");
+    console.log(seconddate.format("YYYY MM DD - hh:mm:ss a"));
+
+    console.log(firstdate.diff(seconddate,'days'))
+    resultstext.textContent = firstdate.diff(seconddate,'days') + " days"
 
     /*
     "Difference" — subtract the 2 values
@@ -48,7 +66,13 @@ function calculateDays() {
     } else {
         result.textContent = "";
     }
-        
+     
+    let daysbetweendiv= document.getElementById('daysbetweendiv');
+    let resultsdiv= document.getElementById('resultsdiv');
+
+    document.getElementById("daysbetweendiv").classList.add("hidden");
+    document.getElementById("resultsdiv").classList.remove("hidden");
+    
     }
 
     /* checks if there are values in both date fields
@@ -63,13 +87,11 @@ function checkInput() {
     }
     }
 
-
     /* Whenever you put in or remove a date, the checkInput() 
     function is called to check if the button should be enabled or disabled. */
 
     date1.addEventListener("change", checkInput);
     date2.addEventListener("change", checkInput);
-
 
     /*finds the button on the page*/
     const calculateButton = document.getElementById("calculateButton");
@@ -80,14 +102,49 @@ function checkInput() {
 
 
 
+
+
+function goblue() {
+  console.log("goblue")
+  resultstext.className = 'blue-text';
+}
+
+function goyellow() {
+  console.log("goyellow")
+  resultstext.className = 'yellow-text';
+}
+
+// --ADD/SUBTRACT DAYS TO A DATE-- 
+
+/* define important things: 
+- the ADD button
+- the SUBTRACT button
+- the DAYS input
+- the DATE input
+- the CALCULATE button
+- the RESULT
+*/
+
 const addButton = document.getElementById("addButton");
 const subtractButton = document.getElementById("subtractButton");
 const daysInput = document.getElementById("days");
 const inputDate = document.getElementById("inputDate");
 const calculateNewDateButton = document.getElementById("calculateNewDate");
 const newDateResult = document.getElementById("newDateResult");
+
+
+
+const bluebutton = document.getElementById("bluebutton");
+const yellowbutton = document.getElementById("yellowbutton");
+
+bluebutton.addEventListener("click", goblue);
+yellowbutton.addEventListener("click", goyellow);
+
+/* Operation is an empty box that has no content until the user clicks add or subttract */
+
 let operation = "";
 
+/* listen for when someone clicks the 'Add' button, */
 addButton.addEventListener("click", () => {
     operation = "add";
     checkNewDateInput();
@@ -172,3 +229,6 @@ todayButton2.addEventListener("click", () => {
   setToday(date2);
   checkInput();
 });
+
+//--------------
+

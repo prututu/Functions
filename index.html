@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="assets/reset.css" rel="stylesheet">
 		<link href="assets/style.css" rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 		<script defer src="assets/main.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Figtree&display=swap" rel="stylesheet">
 	</head>
@@ -19,7 +20,7 @@
 	  </div>
 
 	<!-- DAYS BETWEEN -->
-	<div class="tab-content">
+	<div class="tab-content" id="daysbetweendiv">
 		<div class="browser-window">
 			<input type="date" id="date1">
 			<button id="todayButton1" class="today-button">Today</button>
@@ -36,7 +37,7 @@
 	</div>
 
 	<!-- ADD/SUBTRACT DAYS -->
-	<div class="tab-content hidden">
+	<div class="tab-content hidden" id="addsubdaysdiv">
 		<div class="browser-window">
 			<h2 class="browser-heading">Date Calculator - Add or Subtract Days</h2>
 			<div>
@@ -58,6 +59,18 @@
 
 		</div>
 	</div>
+
+	<div class="tab-content hidden" id="resultsdiv">
+	
+		<div id="resultstext">dito ang results~</div>
+		
+		<button class="blue" id="bluebutton">blue</button>
+		<button class="yellow" id="yellowbutton"> yellow</button>
+
+	</div>
+
+
+
     <script>
 
     </script>
