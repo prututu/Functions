@@ -197,6 +197,7 @@ button:disabled {
 
 
 #calculator-container, #addsubdays {
+    margin-top: var(--padding);
     background-color: white;
     padding: var(--padding);
 }

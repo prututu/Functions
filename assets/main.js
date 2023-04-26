@@ -188,13 +188,13 @@ function checkBaseInputs() {
 function addDays() {
   const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
   const newDate = baseMoment.add(parseInt(numDays.value), 'days');
-  displayResult(newDate.format('YYYY-MM-DD'));
+  displayResult(newDate.format('MMMM D, YYYY'));
 }
 
 function subtractDays() {
   const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
   const newDate = baseMoment.subtract(parseInt(numDays.value), 'days');
-  displayResult(newDate.format('YYYY-MM-DD'));
+  displayResult(newDate.format('MMMM D, YYYY'));
 }
 
 //RESULT 
