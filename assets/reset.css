@@ -53,3 +53,6 @@ details ::-webkit-details-marker {
 	display: none;
 }
 
+.days {
+	font-size: 40px;
+}

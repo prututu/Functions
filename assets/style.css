@@ -2,77 +2,77 @@
 
 /* Bantayog Light */
 @font-face {
-    font-family: 'Bantayog';
-    src: url('/assets/fonts/Bantayog-Light.woff') format('woff');
-    font-weight: 300;
-  }
-  
-  /* Bantayog Regular */
-  @font-face {
-    font-family: 'Bantayog';
-    src: url('/assets/fonts/Bantayog-Regular.woff') format('woff');
-    font-weight: 400;
-  }
-  
-  /* Bantayog SemiLight */
-  @font-face {
-    font-family: 'Bantayog';
-    src: url('/assets/fonts/Bantayog-Semilight.woff') format('woff');
-    font-weight: 500;
-  }
-  
-  /* Cubao Free Variable */
-  @font-face {
-    font-family: 'Cubao';
-    src: url('/assets/fonts/CubaoFreeVariable.ttf') format('truetype-variations');
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+  font-family: 'Bantayog';
+  src: url('/assets/fonts/Bantayog-Light.woff') format('woff');
+  font-weight: 300;
+}
+
+/* Bantayog Regular */
+@font-face {
+  font-family: 'Bantayog';
+  src: url('/assets/fonts/Bantayog-Regular.woff') format('woff');
+  font-weight: 400;
+}
+
+/* Bantayog SemiLight */
+@font-face {
+  font-family: 'Bantayog';
+  src: url('/assets/fonts/Bantayog-Semilight.woff') format('woff');
+  font-weight: 500;
+}
+
+/* Cubao Free Variable */
+@font-face {
+  font-family: 'Cubao';
+  src: url('/assets/fonts/CubaoFreeVariable.ttf') format('truetype-variations');
+  font-weight: 400;
+  font-style: normal;
+}
+
 /*|| VARIABLES */ 
 
 /* FOR MOBILE */
 
 :root{
 
-    /* typescale */
-  
-    --text-xl: 80px;
-	--text-lg: calc(var(--text-base)*1.125);
-	--text-base: 30px;
-	--text-sm: calc(var(--text-base)*0.875);
-	--text-xs: calc(var(--text-base)*0.3);
+  /* typescale */
 
-    /* colors */
-    --bg-color: #F8F3EE;
-    --yellow: #FFCD5B;
-    --black: #222222;
-    --tint: rgba(143, 128, 71, 0.11);
-    
-    /* spacing */
-    --padding:20px;
+  --text-xl: 80px;
+--text-lg: calc(var(--text-base)*1.125);
+--text-base: 30px;
+--text-sm: calc(var(--text-base)*0.875);
+--text-xs: calc(var(--text-base)*0.3);
+
+  /* colors */
+  --bg-color: #F8F3EE;
+  --yellow: #FFCD5B;
+  --black: #222222;
+  --tint: rgba(143, 128, 71, 0.11);
+  
+  /* spacing */
+  --padding:20px;
 
 }
 
 /* || DESKTOP */
 
 @media (min-width:650px) {
-    :root {
-	
-	/* typescale */
-    
-    }
+  :root {
+
+/* typescale */
+  
+  }
 }
 
 /* LINKS */
 
 body {
-    font-family: 'Bantayog';
-    font-weight: 300;
-    background-color: var(--bg-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-family: 'Bantayog';
+  font-weight: 300;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* TYPOGRAPHY */
@@ -81,196 +81,227 @@ body {
 /* BUTTON */
 
 button {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    background-color: var(--yellow);
-    color: var(--black);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: var(--yellow);
+  color: var(--black);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+  background-color: rgb(228, 228, 228);
+  color:rgb(189, 183, 175)99;
+  cursor: not-allowed;
 }
 
 #result {
-    margin-top: 1rem;
+  margin-top: 1rem;
+
 }
 
 /* INPUTS */
 
 input[type="date"], input[type="number"] {
-    display: inline-block;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: center;
+  display: inline-block;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 
-    margin-right: 1rem;
+  margin-right: 1rem;
 
-    height: 42px;
+  height: 42px;
 
-    padding: 10px;
-    gap: 10px;
-    border: 1px solid #F0EAE3;
-    border-radius: 9px;
-    background: rgba(248, 243, 238, 0.29);
+  padding: 10px;
+  gap: 10px;
+  border: 1px solid #F0EAE3;
+  border-radius: 9px;
+  background: rgba(248, 243, 238, 0.29);
 
 }
 
 input[type="number"] {
-    width: 60px;
+  width: 60px;
 }
 
 /* FLEXBOX for input + today buttons */
 
 .input-group {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 
 /* FLEXBOX for add/subtract buttons */
 .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
 /* RESULTS PAGE "FILTERS */
 
 .filters {
-    display: flex;
+  display: flex;
+  color: white;
+  margin-bottom: 30px;
 
 }
 
 .filter {
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
-#bluebutton {
+#bluebutton, #yellowbutton {
+  border-radius: 100px;
+  width: 20px;
 
 }
 
 .blue-text {
-	color:blue;
-	font-family:'Cubao';
-    font-size: 70vw;
+color:rgb(33, 33, 94);
+font-family:'Cubao';
+font-size: 70vw;
 }
 
-#yellowbutton {
-
-}
 .yellow-text {
-	color:gold;
-	font-family:'Times New Roman', Times, serif;
-    font-size: 70vw;
+color:gold;
+font-family:'Cubao';
+font-size: 70vw;
 }
 
 
 .hidden {
-    display: none;
-  }
-  
+  display: none;
+}
+
 
 #add-days,
 #subtract-days {
-    background-color: var(--yellow);
-    color: var(--black);
+  background-color: var(--yellow);
+  color: var(--black);
 }
 
 #today1,
 #today2,
 #base-today {
-    border-radius: 11px;
-    color:black;
-    background-color: var(--tint);
+  border-radius: 11px;
+  color:black;
+  background-color: var(--tint);
 }
 
 .selected-tab {
-    color: var(--black);
-    font-weight: 500;
+  color: var(--black);
+  font-weight: 500;
 }
 
 .deselected-tab {
-    color: var(--black);
-    
+  color: var(--black);
+  
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 
 #calculator-container, #addsubdays {
-    margin-top: var(--padding);
-    background-color: white;
-    padding: var(--padding);
-    box-shadow: 0px 12.1636px 50px rgba(143, 109, 77, 0.1);
-    border-radius: 29px;
-    height: 250px;
-    width: 330px;
-    
-    flex-direction: column;
-    justify-content: center; !important
-    align-items: center;!important
+  margin-top: var(--padding);
+  background-color: white;
+  padding: var(--padding);
+  box-shadow: 0px 12.1636px 50px rgba(143, 109, 77, 0.1);
+  border-radius: 29px;
+  height: 250px;
+  width: 330px;
+  padding-top: 50px;
+  
+  flex-direction: column;
+  justify-content: center; !important
+  align-items: center;!important
 
 }
 
 .tabs {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    margin-top: 50px;
-    gap: 0px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 50px;
+  gap: 0px;
 }
 
 .tabs button {
-    margin: 0;
-    background-color: transparent;
-  }
+  margin: 0;
+  background-color: transparent;
+}
 
-  #calculator-container input[type="date"]::placeholder,
-  #addsubdays input[type="date"]::placeholder,
-  #addsubdays input[type="number"]::placeholder {
-    color: #999;
-  }
+#calculator-container input[type="date"]::placeholder,
+#addsubdays input[type="date"]::placeholder,
+#addsubdays input[type="number"]::placeholder {
+  color: #999;
+}
 
 #result {
-    font-size: var(--text-xl);
-    font-family: 'Cubao';
-    display: flex;
-    height: 300px;
-    justify-content: center;
-    align-items: center;
+  font-size: var(--text-xl);
+  font-family: 'Cubao';
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #result-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  #result-container > * {
-    text-align: center;
-  }
-  #result-container button {
-    display: block;
-    margin: 0 auto;
-  }
+#result-container > * {
+  text-align: center;
+}
+#result-container button {
+  display: block;
+  margin: 0 auto;
+}
 
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+
+#calculate-days, #add-days, #subtract-days, #back { 
+  border-radius: 11px;
+  color:black;
+  font-family: 'Cubao';
+  font-variation-settings: "wdth" 115;
+  font-size: 20px;
+  padding-top: 12px;
+
+}
+
+#mango {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.together {
+  display: flex;
+  flex-direction: column;
+  height:300px;
+  justify-content: center;
+  align-items: center;
+
+}

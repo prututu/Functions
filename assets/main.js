@@ -99,8 +99,6 @@ function goBack() {
   location.reload();
 }
 
-
-
 /* --RESULTS PAGE FILTERS--*/
 
 const bluebutton = document.getElementById("bluebutton");
@@ -110,8 +108,11 @@ bluebutton.addEventListener("click", goblue);
 yellowbutton.addEventListener("click", goyellow);
 
 function goblue() {
-  console.log("goblue")
+  console.log("goblue");
   result.className = 'blue-text';
+  
+  var mango = document.querySelector("#mango");
+  mango.classList.add("show");
 }
 
 function goyellow() {
@@ -204,5 +205,4 @@ function displayResult(resultText) {
   document.getElementById('daysbetween').style.display = 'none';
   document.getElementById('addsubdays').style.display = 'none';
   document.getElementById('result-container').style.display = 'block';
-  document.getElementById('tabs').style.display = 'none'; // Add this line
-}
+  document.getElementById('tabs').style.display = 'none';}
