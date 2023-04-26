@@ -6,7 +6,6 @@
 - today
 - result
 */
-
 const date1 = document.getElementById('date1');
 const date2 = document.getElementById('date2');
 
@@ -86,7 +85,23 @@ function calculateDaysDifference() {
 
     document.getElementById('calculator-container').style.display = 'none';
     document.getElementById('result-container').style.display = 'block';
+
+
 }
+
+/* --BACK BUTTON ON RESULTS "PAGE"-- */
+
+// Add an event listener for the Back button
+const backButton = document.getElementById('back');
+backButton.addEventListener('click', goBack);
+
+function goBack() {
+  document.getElementById('daysbetween').style.display = 'block';
+  document.getElementById('addsubdays').style.display = 'block';
+  document.getElementById('result-container').style.display = 'none';
+}
+
+
 
 /* --RESULTS PAGE FILTERS--*/
 
@@ -106,17 +121,72 @@ function goyellow() {
   result.className = 'yellow-text';
 }
 
-/* --BACK BUTTON ON RESULTS "PAGE"-- */
 
-// Add an event listener for the Back button
-const backButton = document.getElementById('back');
-backButton.addEventListener('click', goBack);
+// TAB SWITCHING
 
-function goBack() {
-  document.getElementById('calculator-container').style.display = 'block';
-  document.getElementById('result-container').style.display = 'none';
+const betweenDaysButton = document.getElementById('between-days');
+const addSubDaysButton = document.getElementById('add-sub-days');
+
+betweenDaysButton.addEventListener('click', showDaysBetween);
+addSubDaysButton.addEventListener('click', showAddSubDays);
+
+function showDaysBetween() {
+  document.getElementById('daysbetween').classList.remove('hidden');
+  document.getElementById('addsubdays').classList.add('hidden');
+}
+
+function showAddSubDays() {
+  document.getElementById('daysbetween').classList.add('hidden');
+  document.getElementById('addsubdays').classList.remove('hidden');
 }
 
 
+// NEW CALCULATOR
+const baseDate = document.getElementById('base-date');
+const baseTodayButton = document.getElementById('base-today');
+const numDays = document.getElementById('num-days');
+const addDaysButton = document.getElementById('add-days');
+const subtractDaysButton = document.getElementById('subtract-days');
 
+baseTodayButton.addEventListener('click', setBaseToday);
+baseDate.addEventListener('input', checkBaseInputs);
+numDays.addEventListener('input', checkBaseInputs);
+addDaysButton.addEventListener('click', addDays);
+subtractDaysButton.addEventListener('click', subtractDays);
 
+function setBaseToday() {
+  const currentDate = new Date();
+  baseDate.valueAsDate = currentDate;
+  checkBaseInputs();
+}
+
+function checkBaseInputs() {
+  if (baseDate.value && numDays.value) {
+    addDaysButton.disabled = false;
+    subtractDaysButton.disabled = false;
+  } else {
+    addDaysButton.disabled = true;
+    subtractDaysButton.disabled = true;
+  }
+}
+
+function addDays() {
+  const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
+  const newDate = baseMoment.add(parseInt(numDays.value), 'days');
+  displayResult(newDate.format('YYYY-MM-DD'));
+}
+
+function subtractDays() {
+  const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
+  const newDate = baseMoment.subtract(parseInt(numDays.value), 'days');
+  displayResult(newDate.format('YYYY-MM-DD'));
+}
+
+//RESULT 
+
+function displayResult(resultText) {
+  result.textContent = resultText;
+  document.getElementById('daysbetween').style.display = 'none';
+  document.getElementById('addsubdays').style.display = 'none';
+  document.getElementById('result-container').style.display = 'block';
+}

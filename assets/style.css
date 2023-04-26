@@ -35,13 +35,20 @@
 
 :root{
 
-/* typescale */
+    /* typescale */
   
     --text-xl: calc(var(--text-base)*6);
 	--text-lg: calc(var(--text-base)*1.125);
 	--text-base: 30px;
 	--text-sm: calc(var(--text-base)*0.875);
 	--text-xs: calc(var(--text-base)*0.3);
+
+    /* colors */
+    --bg-color: #F5F1E6;
+    --yellow: #FFCD5B;
+    --black: #222222;
+    --tint: rgba(143, 128, 71, 0.11);
+
 
 }
 
@@ -60,12 +67,10 @@
 body {
     font-family: 'Bantayog';
     font-weight: 300;
-    background-color: #f5f5f5;
+    background-color: var(--bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
 }
 
 .container {
@@ -74,12 +79,19 @@ body {
 
 input[type="date"] {
     display: block;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid var(--black);
+    border-radius: 5px;
 }
+
+/* TYPOGRAPHY */
+
+
+/* BUTTON */
 
 button {
     padding: 0.5rem 1rem;
@@ -112,6 +124,15 @@ button:disabled {
 	margin-right: 1rem;
   }
 
+
+/* FLEXBOX for add/subtract buttons */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
 /* RESULTS PAGE "FILTERS */
 
 .blue-text {
@@ -124,4 +145,25 @@ button:disabled {
 	font-family:'Times New Roman', Times, serif
 }
 
+
+
+
+.hidden {
+    display: none;
+  }
+  
+
+#add-days,
+#subtract-days {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+#today1,
+#today2,
+#base-today {
+    border-radius: 11px;
+    color:black;
+    background-color: var(--tint);
+}
 
