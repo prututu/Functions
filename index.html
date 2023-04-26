@@ -10,70 +10,17 @@
 		<script defer src="assets/main.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Figtree&display=swap" rel="stylesheet">
 	</head>
-
-<body>
-
-	<!-- TABS -->
-	<div class="tabs">
-		<button class="tab-button active" id="tab1">Days Between Dates</button>
-		<button class="tab-button" id="tab2">Add/Subtract Days</button>
-	  </div>
-
-	<!-- DAYS BETWEEN -->
-	<div class="tab-content" id="daysbetweendiv">
-		<div class="browser-window">
+	<body>
+		<div class="container">
+			<h1>Day Calculator</h1>
 			<input type="date" id="date1">
-			<button id="todayButton1" class="today-button">Today</button>
+			<button id="today1">Today</button>
+			<br>
 			<input type="date" id="date2">
-			<button id="todayButton2" class="today-button">Today</button>
-
-			<div class="tooltip">
-				<button id="calculateButton" disabled>Calculate Days</button>
-				<span class="tooltip-text">Oops! Looks like you forgot to enter some dates. Please pick a start and end date</span>
-			</div>
-
-			<div class="result" id="result"></div>
+			<button id="today2">Today</button>
+			<br>
+			<button id="calculate-days" disabled>Calculate Days</button>
+			<p id="result"></p>
 		</div>
-	</div>
-
-	<!-- ADD/SUBTRACT DAYS -->
-	<div class="tab-content hidden" id="addsubdaysdiv">
-		<div class="browser-window">
-			<h2 class="browser-heading">Date Calculator - Add or Subtract Days</h2>
-			<div>
-				<button id="addButton">Add</button>
-				<button id="subtractButton">Subtract</button>
-			</div>
-			<div>
-				<label for="days">Days:</label>
-				<input type="number" id="days" min="0">
-			</div>
-			<div>
-				<label for="inputDate">Date:</label>
-				<input type="date" id="inputDate">
-			</div>
-			<div>
-				<button id="calculateNewDate" disabled>Calculate New Date</button>
-			</div>
-			<div id="newDateResult"></div>
-
-		</div>
-	</div>
-
-	<div class="tab-content hidden" id="resultsdiv">
-	
-		<div id="resultstext">dito ang results~</div>
-		
-		<button class="blue" id="bluebutton">blue</button>
-		<button class="yellow" id="yellowbutton"> yellow</button>
-
-	</div>
-
-
-
-    <script>
-
-    </script>
-</body>
-</html>
+	</body>
 </html>
