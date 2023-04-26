@@ -10,17 +10,26 @@
 		<script defer src="assets/main.js"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Figtree&display=swap" rel="stylesheet">
 	</head>
-	<body>
-		<div class="container">
-			<h1>Day Calculator</h1>
-			<input type="date" id="date1">
-			<button id="today1">Today</button>
-			<br>
-			<input type="date" id="date2">
-			<button id="today2">Today</button>
-			<br>
+
+<body>
+	<div class="container">
+        <h1>Day Calculator</h1>
+		<div id="calculator-container">
+			<div class="input-group">
+			  <input type="date" id="date1">
+			  <button id="today1">Today</button>
+			</div>
+			<div class="input-group">
+			  <input type="date" id="date2">
+			  <button id="today2">Today</button>
+			</div>
 			<button id="calculate-days" disabled>Calculate Days</button>
-			<p id="result"></p>
-		</div>
-	</body>
+		  </div>
+        <div id="result-container" style="display: none;">
+            <p id="result"></p>
+            <button id="back">Back</button>
+        </div>
+    </div>
+</body>
+
 </html>

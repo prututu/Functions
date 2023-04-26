@@ -1,3 +1,10 @@
+/* || TYPOGRAPHY */
+
+@font-face {
+	font-family: 'NeueBit';
+	src: url('PPNeuebit/PPNeueBit-Regular.woff2');
+	font-weight: 400;
+ }
 
 /*|| VARIABLES */ 
 
@@ -5,28 +12,29 @@
 
 :root{
 
-	/* typescale */
-	  
-		--text-xl: calc(var(--text-base)*6);
-		--text-lg: calc(var(--text-base)*1.125);
-		--text-base: 30px;
-		--text-sm: calc(var(--text-base)*0.875);
-		--text-xs: calc(var(--text-base)*0.3);
-		
-		--display: block;
-	}
+/* typescale */
+  
+    --text-xl: calc(var(--text-base)*6);
+	--text-lg: calc(var(--text-base)*1.125);
+	--text-base: 30px;
+	--text-sm: calc(var(--text-base)*0.875);
+	--text-xs: calc(var(--text-base)*0.3);
 	
-	/* || DESKTOP */
-	
-	@media (min-width:650px) {
-		:root {
-		
-		/* typescale */
-		
-		}
-	}
+	--display: block;
+}
 
-/* PARTS OF THE WEBSITE */
+/* || DESKTOP */
+
+@media (min-width:650px) {
+    :root {
+	
+	/* typescale */
+    
+    }
+}
+
+
+/* LINKS */
 
 body {
     font-family: 'Figtree', serif;
@@ -42,8 +50,6 @@ body {
 
 }
 
-/* INPUT */
-
 input[type="date"] {
     display: block;
     margin-bottom: 1rem;
@@ -53,19 +59,33 @@ input[type="date"] {
     border-radius: 4px;
 }
 
-/* BUTTON */
-
 button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    background-color: #282828;
+    background-color: #007bff;
     color: #ffffff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-right: 1rem;
 }
 
 button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
+
+#result {
+    margin-top: 1rem;
+}
+
+/* FLEXBOX for input + today buttons */
+.input-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+  }
+  
+  .input-group input[type="date"] {
+	margin-right: 1rem;
+  }
