@@ -15,12 +15,17 @@
 
 	<div class="container">
 
-        <h1>Day Calculator</h1>
+		<div class="logo">
+			<img src="assets/logo.svg" alt="Sun Dali Day Calculator Logo">
+		</div>
 
-		<button id="between-days">Between Days</button>
-		<button id="add-sub-days">Add/Subtract Days</button>
+		<div class="tabs" id="tabs">
+			<button id="between-days">between days</button>
+			<button id="add-sub-days">add/subtract days</button>
+		  </div>
 
 		<div id="daysbetween">
+
 			<div id="calculator-container">
 				<div class="input-group">
 				<input type="date" id="date1">
@@ -31,8 +36,10 @@
 				<input type="date" id="date2">
 				<button id="today2">Today</button>
 				</div>
+
 				<button id="calculate-days" disabled>Calculate Days</button>
 			</div>
+		
 		</div>
 
 		<div id="addsubdays" class="hidden">
@@ -45,7 +52,9 @@
 				<button id="add-days">Add Days</button>
 				<button id="subtract-days">Subtract Days</button>
 			</div>
-		</div>		
+			
+		</div>
+		
 
         <div id="result-container" style="display: none;">
 			

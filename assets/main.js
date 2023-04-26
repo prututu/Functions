@@ -96,9 +96,7 @@ const backButton = document.getElementById('back');
 backButton.addEventListener('click', goBack);
 
 function goBack() {
-  document.getElementById('daysbetween').style.display = 'block';
-  document.getElementById('addsubdays').style.display = 'block';
-  document.getElementById('result-container').style.display = 'none';
+  location.reload();
 }
 
 
@@ -130,16 +128,33 @@ const addSubDaysButton = document.getElementById('add-sub-days');
 betweenDaysButton.addEventListener('click', showDaysBetween);
 addSubDaysButton.addEventListener('click', showAddSubDays);
 
+// Add a function to update the tab states
+function updateTabStates(selectedTab) {
+  if (selectedTab === 'betweenDays') {
+      betweenDaysButton.classList.add('selected-tab');
+      betweenDaysButton.classList.remove('deselected-tab');
+
+      addSubDaysButton.classList.add('deselected-tab');
+      addSubDaysButton.classList.remove('selected-tab');
+  } else {
+      addSubDaysButton.classList.add('selected-tab');
+      addSubDaysButton.classList.remove('deselected-tab');
+
+      betweenDaysButton.classList.add('deselected-tab');
+      betweenDaysButton.classList.remove('selected-tab');
+  }
+}
 function showDaysBetween() {
   document.getElementById('daysbetween').classList.remove('hidden');
   document.getElementById('addsubdays').classList.add('hidden');
+  updateTabStates('betweenDays');
 }
 
 function showAddSubDays() {
   document.getElementById('daysbetween').classList.add('hidden');
   document.getElementById('addsubdays').classList.remove('hidden');
+  updateTabStates('addSubDays');
 }
-
 
 // NEW CALCULATOR
 const baseDate = document.getElementById('base-date');
@@ -189,4 +204,5 @@ function displayResult(resultText) {
   document.getElementById('daysbetween').style.display = 'none';
   document.getElementById('addsubdays').style.display = 'none';
   document.getElementById('result-container').style.display = 'block';
+  document.getElementById('tabs').style.display = 'none'; // Add this line
 }

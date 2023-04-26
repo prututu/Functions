@@ -48,7 +48,9 @@
     --yellow: #FFCD5B;
     --black: #222222;
     --tint: rgba(143, 128, 71, 0.11);
-
+    
+    /* spacing */
+    --padding:20px;
 
 }
 
@@ -74,6 +76,7 @@ body {
 }
 
 .container {
+
 
 }
 
@@ -117,13 +120,17 @@ button:disabled {
 .input-group {
 	display: flex;
 	align-items: center;
-	margin-bottom: 1rem;
-  }
+    justify-content: center;
+    
+    }
   
-  .input-group input[type="date"] {
+.input-group input[type="date"] {
 	margin-right: 1rem;
-  }
+}
 
+.input-group > *:not(:last-child) {
+    margin-bottom: 1rem;
+}
 
 /* FLEXBOX for add/subtract buttons */
 .button-group {
@@ -167,3 +174,35 @@ button:disabled {
     background-color: var(--tint);
 }
 
+
+
+
+
+.selected-tab {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.deselected-tab {
+    background-color: #ccc;
+    color: #666;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+
+#calculator-container, #addsubdays {
+    background-color: white;
+    padding: var(--padding);
+}
+
+.tabs {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
