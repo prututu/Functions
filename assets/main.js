@@ -97,3 +97,23 @@ function goBack() {
   document.getElementById('calculator-container').style.display = 'block';
   document.getElementById('result-container').style.display = 'none';
 }
+
+
+/* --RESULTS PAGE FILTERS--*/
+
+const bluebutton = document.getElementById("bluebutton");
+const yellowbutton = document.getElementById("yellowbutton");
+
+bluebutton.addEventListener("click", goblue);
+yellowbutton.addEventListener("click", goyellow);
+
+function goblue() {
+  console.log("goblue")
+  result.className = 'blue-text';
+}
+
+function goyellow() {
+  console.log("goyellow")
+  result.className = 'yellow-text';
+}
+

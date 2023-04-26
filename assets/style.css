@@ -33,7 +33,6 @@
     }
 }
 
-
 /* LINKS */
 
 body {
@@ -89,3 +88,17 @@ button:disabled {
   .input-group input[type="date"] {
 	margin-right: 1rem;
   }
+
+/* RESULTS PAGE "FILTERS */
+
+.blue-text {
+	color:blue;
+	font-family:monospace;
+}
+
+.yellow-text {
+	color:gold;
+	font-family:'Times New Roman', Times, serif
+}
+
+
