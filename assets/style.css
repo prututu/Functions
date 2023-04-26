@@ -44,7 +44,7 @@
 	--text-xs: calc(var(--text-base)*0.3);
 
     /* colors */
-    --bg-color: #F5F1E6;
+    --bg-color: #F8F3EE;
     --yellow: #FFCD5B;
     --black: #222222;
     --tint: rgba(143, 128, 71, 0.11);
@@ -75,20 +75,20 @@ body {
     align-items: center;
 }
 
-.container {
-
-
-}
-
-input[type="date"] {
-    display: block;
+input[type="date"], input[type="number"] {
+    display: inline-block;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+
     padding: 10px;
     gap: 10px;
-    border: 1px solid var(--black);
-    border-radius: 5px;
+    border: 1px solid #F0EAE3;
+    border-radius: 9px;
+    background: rgba(248, 243, 238, 0.29);
+
 }
 
 /* TYPOGRAPHY */
@@ -99,7 +99,7 @@ input[type="date"] {
 button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    background-color: #007bff;
+    background-color: var(--yellow);
     color: #ffffff;
     border: none;
     border-radius: 4px;
@@ -116,21 +116,14 @@ button:disabled {
     margin-top: 1rem;
 }
 
-/* FLEXBOX for input + today buttons */
-.input-group {
-	display: flex;
-	align-items: center;
-    justify-content: center;
-    
-    }
-  
-.input-group input[type="date"] {
-	margin-right: 1rem;
-}
 
-.input-group > *:not(:last-child) {
-    margin-bottom: 1rem;
-}
+
+/* FLEXBOX for input + today buttons */
+
+.input-group {
+    justify-content: center;
+    align-items: center;
+  }
 
 /* FLEXBOX for add/subtract buttons */
 .button-group {
@@ -179,13 +172,13 @@ button:disabled {
 
 
 .selected-tab {
-    background-color: var(--yellow);
     color: var(--black);
+    font-weight: 500;
 }
 
 .deselected-tab {
-    background-color: #ccc;
-    color: #666;
+    color: var(--black);
+    
 }
 
 .logo {
@@ -200,10 +193,29 @@ button:disabled {
     margin-top: var(--padding);
     background-color: white;
     padding: var(--padding);
+    box-shadow: 0px 12.1636px 50px rgba(143, 109, 77, 0.1);
+    border-radius: 29px;
+    height: 250px;
+    width: 330px;
+
 }
 
 .tabs {
     margin-top: 50px;
     display: flex;
-    flex-direction: row;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 50px;
+    gap: 0px;
 }
+
+.tabs button {
+    margin: 0;
+    background-color: transparent;
+  }
+
+  #calculator-container input[type="date"]::placeholder,
+  #addsubdays input[type="date"]::placeholder,
+  #addsubdays input[type="number"]::placeholder {
+    color: #999;
+  }
