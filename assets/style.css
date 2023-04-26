@@ -1,11 +1,34 @@
 /* || TYPOGRAPHY */
 
+/* Bantayog Light */
 @font-face {
-	font-family: 'NeueBit';
-	src: url('PPNeuebit/PPNeueBit-Regular.woff2');
-	font-weight: 400;
- }
-
+    font-family: 'Bantayog';
+    src: url('assets/fonts/Bantayog-Light.woff') format('woff');
+    font-weight: 300;
+  }
+  
+  /* Bantayog Regular */
+  @font-face {
+    font-family: 'Bantayog';
+    src: url('assets/fonts/Bantayog-Regular.woff') format('woff');
+    font-weight: 400;
+  }
+  
+  /* Bantayog SemiLight */
+  @font-face {
+    font-family: 'Bantayog';
+    src: url('assets/fonts/Bantayog-Semilight.woff') format('woff');
+    font-weight: 500;
+  }
+  
+  /* Cubao Free Variable */
+  @font-face {
+    font-family: 'Cubao Free Variable';
+    src: url('assets/fonts/CubaoFreeVariable.ttf') format('truetype-variations');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 /*|| VARIABLES */ 
 
 /* FOR MOBILE */
@@ -19,8 +42,7 @@
 	--text-base: 30px;
 	--text-sm: calc(var(--text-base)*0.875);
 	--text-xs: calc(var(--text-base)*0.3);
-	
-	--display: block;
+
 }
 
 /* || DESKTOP */
@@ -36,7 +58,8 @@
 /* LINKS */
 
 body {
-    font-family: 'Figtree', serif;
+    font-family: 'Bantayog';
+    font-weight: 300;
     background-color: #f5f5f5;
     display: flex;
     justify-content: center;

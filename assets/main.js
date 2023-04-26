@@ -6,6 +6,7 @@
 - today
 - result
 */
+
 const date1 = document.getElementById('date1');
 const date2 = document.getElementById('date2');
 
@@ -87,18 +88,6 @@ function calculateDaysDifference() {
     document.getElementById('result-container').style.display = 'block';
 }
 
-/* --BACK BUTTON ON RESULTS "PAGE"-- */
-
-// Add an event listener for the Back button
-const backButton = document.getElementById('back');
-backButton.addEventListener('click', goBack);
-
-function goBack() {
-  document.getElementById('calculator-container').style.display = 'block';
-  document.getElementById('result-container').style.display = 'none';
-}
-
-
 /* --RESULTS PAGE FILTERS--*/
 
 const bluebutton = document.getElementById("bluebutton");
@@ -116,4 +105,18 @@ function goyellow() {
   console.log("goyellow")
   result.className = 'yellow-text';
 }
+
+/* --BACK BUTTON ON RESULTS "PAGE"-- */
+
+// Add an event listener for the Back button
+const backButton = document.getElementById('back');
+backButton.addEventListener('click', goBack);
+
+function goBack() {
+  document.getElementById('calculator-container').style.display = 'block';
+  document.getElementById('result-container').style.display = 'none';
+}
+
+
+
 
