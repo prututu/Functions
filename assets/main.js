@@ -145,10 +145,16 @@ function setBaseToday() {
 }
 
 function checkBaseInputs() {
+
+  console.log('Are both imputs filled?');
+
   if (baseDate.value && numDays.value) {
+    console.log('Yes.')
     addDaysButton.disabled = false;
     subtractDaysButton.disabled = false;
+
   } else {
+    console.log('No. One or both inputs are empty.')
     addDaysButton.disabled = true;
     subtractDaysButton.disabled = true;
   }
@@ -177,6 +183,7 @@ function displayResult(resultText) {
   document.getElementById('result-container').style.display = 'block';
   document.getElementById('tabs').style.display = 'none';}
 
+  document.getElementById('result').style.fontSize = '10px';
 
 /* --BACK BUTTON ON RESULTS "PAGE"-- */
 

@@ -174,6 +174,13 @@ input[type="number"] {
   color: var(--black);
 }
 
+#add-days:disabled,
+#subtract-days:disabled {
+  background-color: rgb(228, 228, 228);
+  color:rgb(189, 183, 175)99;
+  cursor: not-allowed;
+}
+
 /* TODAY BUTTONS */
 
 #today1,
@@ -324,7 +331,7 @@ background-color: #B8CFD7 !important;
 /* Flower SVG image as background when button is clicked */
 background-image: url('flower.svg') !important; 
 background-repeat: no-repeat;
-background-position: center;
+background-position: center 18vh;
 background-size: 200px;
 
 }
@@ -338,9 +345,8 @@ background-color: #5A5E44 !important;
 /* Mango SVG image as background when button is clicked */
 background-image: url('mango.svg') !important; 
 background-repeat: no-repeat;
-background-position: center;
+background-position: center 30vh;
 background-size: 200px;
-
 
 }
 
