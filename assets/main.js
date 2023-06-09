@@ -222,10 +222,9 @@ function goblue() {
   document.body.classList.remove('yellow-text');
   document.body.classList.toggle('blue-text');
 
-  document.getElementById('bluebutton').style.borderColor = 'white'; // Set border color to white
   document.getElementById('sharkbutton').style.borderColor = 'transparent'; // Set border color to transparent
   document.getElementById('yellowbutton').style.borderColor = 'transparent'; // Set border color to transparent
-  
+  document.getElementById('bluebutton').style.borderColor = 'white'; // Set border color to white
 
 }
 
@@ -247,7 +246,7 @@ function goshark() {
   document.body.classList.toggle('shark-text')
 
   document.getElementById('bluebutton').style.borderColor = 'transparent'; // Set border color to transparent
-  document.getElementById('sharkbutton').style.borderColor = 'transparent'; // Set border color to transparent
+  document.getElementById('yellowbutton').style.borderColor = 'transparent'; // Set border color to transparent
   document.getElementById('sharkbutton').style.borderColor = 'white'; // Set border color to white
 }
 

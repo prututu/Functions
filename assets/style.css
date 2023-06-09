@@ -225,9 +225,8 @@ input[type="number"] {
 #back {
   transition: 0.3s;
   border-radius: 11px;
-  color:var(--black);
-  background-color: white;
-  color: #a49a87bb;
+  color:rgb(176, 176, 176);
+  background-color: rgba(0, 0, 0, 0.062);
 
 
 }
@@ -235,7 +234,8 @@ input[type="number"] {
 #back:hover {
   transition: 0.3s;
   transform: translate(-0.5px, -0.5px);
-  background-color: blue;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.171);
 }
 
 /* CLEAR BUTTONS */
@@ -332,7 +332,7 @@ input[type="number"] {
 #subtract-days { 
   border-radius: 11px;
   color:var(--black);
-  font-family: 'Cubao';
+  font-family: 'Cubao', sans-serif;
   font-variation-settings: "wdth" 115;
   font-size: 20px;
   padding-top: 12px;
@@ -374,7 +374,7 @@ input[type="number"] {
 
 #result {
   font-size: var(--text-xl);
-  font-family: 'Cubao';
+  font-family: 'Cubao', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -416,9 +416,10 @@ input[type="number"] {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  background-color:var(--icon-bg);
+  background-color: #ded6cb4a;;
   color:#a93b3b00;
   transition: transform 0.2s ease-in-out;
+  box-shadow: 0 2px 0px rgba(97, 61, 39, 0.2);
 
   border: 2px solid transparent; /* Add transparent border initially */
   transition: border-color 0.2s ease-in-out; /* Add transition effect for border color */
@@ -427,14 +428,14 @@ input[type="number"] {
 
 #bluebutton:hover,
 #yellowbutton:hover,
-#sharkbutton:hover, {
+#sharkbutton:hover {
   transform: scale(1.1); /* Increase the scale on hover */
 }
 
 
 #bluebutton svg,
 #yellowbutton svg,
-#sharkbutton svg, {
+#sharkbutton svg {
   width: 100%; /* Adjust the SVG to fit the button */
   height: 100%;
   object-fit: contain; /* Maintain aspect ratio of the SVG */
@@ -459,13 +460,14 @@ input[type="number"] {
   background-image: url("sharkicon.svg");
   background-position: center;
   background-size: 20px;
+  
 }
 
 .blue-text {
 color:var(--black);
 font-size: 70vw;
 /* blue background color when button is clicked */
-background-color: #F3CBBF !important; 
+background-color: #e8c4ba !important; 
 /* Flower SVG image as background when button is clicked */
 background-image: url('flower.svg') !important; 
 background-repeat: no-repeat;
@@ -490,7 +492,7 @@ transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out
 }
 
 .shark-text {
-  color:white;
+  color:#F3EFDF;
   font-size: 70vw;
   /* Yellow background color when button is clicked */
   background-color: #233C53!important; 
@@ -498,7 +500,7 @@ transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out
   background-image: url('sharkicon.svg') !important; 
   background-repeat: no-repeat;
   background-position: center calc(var(--svg-top-padding) + 15px);
-  background-size: 150px;
+  background-size: 200px;
   transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
   }
   
