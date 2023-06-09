@@ -46,6 +46,7 @@
   /* colors */
   --bg-color: #F8F3EE;
   --yellow: #FFCD5B;
+  --dark-yellow: #fec542;
   --black: #222222;
   --tint: rgba(143, 128, 71, 0.11);
   
@@ -104,6 +105,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  background-color: var(--dark-yellow)
+}
+
 button:disabled {
   background-color: rgb(228, 228, 228);
   color:rgb(189, 183, 175)99;
@@ -157,11 +162,11 @@ input[type="number"] {
   margin-top: 1rem;
 }
 
-
 .hidden {
   display: none;
 }
 
+/* ADD/SUBTRACT DAYS BUTTONS */
 
 #add-days,
 #subtract-days {
@@ -169,11 +174,13 @@ input[type="number"] {
   color: var(--black);
 }
 
+/* TODAY BUTTONS */
+
 #today1,
 #today2,
 #base-today {
   border-radius: 11px;
-  color:black;
+  color:var(--black);
   background-color: var(--tint);
 }
 
@@ -227,28 +234,6 @@ input[type="number"] {
   color: #999;
 }
 
-#result {
-  font-size: var(--text-xl);
-  font-family: 'Cubao';
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#result-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#result-container > * {
-  text-align: center;
-}
-#result-container button {
-  display: block;
-  margin: 0 auto;
-}
 
 .center {
   display: flex;
@@ -259,7 +244,7 @@ input[type="number"] {
 
 #calculate-days, #add-days, #subtract-days, #back { 
   border-radius: 11px;
-  color:black;
+  color:var(--black);
   font-family: 'Cubao';
   font-variation-settings: "wdth" 115;
   font-size: 20px;
@@ -284,6 +269,30 @@ input[type="number"] {
 
 }
 
+/* RESULTS PAGE */
+
+#result {
+  font-size: var(--text-xl);
+  font-family: 'Cubao';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#result-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#result-container > * {
+  text-align: center;
+}
+#result-container button {
+  display: block;
+  margin: 0 auto;
+}
 
 
 /* RESULTS PAGE "FILTERS */
@@ -307,7 +316,7 @@ input[type="number"] {
 }
 
 .blue-text {
-color:rgb(33, 33, 94);
+color:var(--black);
 font-family:'Cubao';
 font-size: 70vw;
 /* blue background color when button is clicked */
@@ -315,7 +324,7 @@ background-color: #B8CFD7 !important;
 /* Flower SVG image as background when button is clicked */
 background-image: url('flower.svg') !important; 
 background-repeat: no-repeat;
-background-position: center center;
+background-position: center;
 background-size: 200px;
 
 }
@@ -329,7 +338,7 @@ background-color: #5A5E44 !important;
 /* Mango SVG image as background when button is clicked */
 background-image: url('mango.svg') !important; 
 background-repeat: no-repeat;
-background-position: center center;
+background-position: center;
 background-size: 200px;
 
 
