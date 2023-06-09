@@ -225,7 +225,7 @@ input[type="number"] {
 #back {
   transition: 0.3s;
   border-radius: 11px;
-  color:rgb(176, 176, 176);
+  color:rgba(255, 255, 255, 0.591);
   background-color: rgba(0, 0, 0, 0.062);
 
 
@@ -467,7 +467,7 @@ input[type="number"] {
 color:var(--black);
 font-size: 70vw;
 /* blue background color when button is clicked */
-background-color: #e8c4ba !important; 
+background-color: #cea2a2 !important; 
 /* Flower SVG image as background when button is clicked */
 background-image: url('flower.svg') !important; 
 background-repeat: no-repeat;

@@ -95,6 +95,8 @@ function calculateDaysDifference() {
     document.getElementById('result-container').style.display = 'block';
     document.getElementById('tabs').style.display = 'none';
 
+    goblue();
+
 }
 
 
@@ -165,12 +167,16 @@ function addDays() {
   const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
   const newDate = baseMoment.add(parseInt(numDays.value));
   displayResult(newDate.format('MMMM D, YYYY'));
+
+  goblue();
 }
 
 function subtractDays() {
   const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
   const newDate = baseMoment.subtract(parseInt(numDays.value));
   displayResult(newDate.format('MMMM D, YYYY'));
+
+  goblue();
 }
 
 //RESULT 
@@ -214,6 +220,7 @@ const sharkbutton = document.getElementById("sharkbutton");
 bluebutton.addEventListener("click", goblue);
 yellowbutton.addEventListener("click", goyellow);
 sharkbutton.addEventListener("click", goshark);
+
 
 
 function goblue() {
