@@ -89,6 +89,88 @@ function calculateDaysDifference() {
 
 }
 
+
+
+/* --ADD/SUBTRACT DAYS-- */
+
+/* STEP 1: Define important things
+- base date
+- number of days to add/subtract
+*/
+
+const baseDate = document.getElementById('base-date');
+const numDays = document.getElementById('num-days');
+
+/* STEP 2: Define buttons
+- button to fill date feild with today's date
+- add button
+- subtract button
+*/
+
+const baseTodayButton = document.getElementById('base-today');
+const addDaysButton = document.getElementById('add-days');
+const subtractDaysButton = document.getElementById('subtract-days');
+
+/* STEP 3: add event listeners
+- when user clicks the today button, setBaseToday fuction is triggered
+- when user inputs the base date or number of days, checkBaseInputs function is triggered
+- when user clicks the add/subtract buttons, their respective functions are triggered 
+*/
+
+baseTodayButton.addEventListener('click', setBaseToday);
+
+baseDate.addEventListener('input', checkBaseInputs);
+numDays.addEventListener('input', checkBaseInputs);
+
+addDaysButton.addEventListener('click', addDays);
+subtractDaysButton.addEventListener('click', subtractDays);
+
+/*STEP 4: Add functions 
+- set the base date to today's date
+- disables the add/subtract buttons unless both fields are filled in
+- adds the days to the base date
+- subtracts the days from the base date
+*/
+
+function setBaseToday() {
+  const currentDate = new Date();
+  baseDate.valueAsDate = currentDate;
+  checkBaseInputs();
+}
+
+function checkBaseInputs() {
+  if (baseDate.value && numDays.value) {
+    addDaysButton.disabled = false;
+    subtractDaysButton.disabled = false;
+  } else {
+    addDaysButton.disabled = true;
+    subtractDaysButton.disabled = true;
+  }
+}
+
+function addDays() {
+  const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
+  const newDate = baseMoment.add(parseInt(numDays.value), 'days');
+  displayResult(newDate.format('MMMM D, YYYY'));
+}
+
+function subtractDays() {
+  const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
+  const newDate = baseMoment.subtract(parseInt(numDays.value), 'days');
+  displayResult(newDate.format('MMMM D, YYYY'));
+}
+
+//RESULT 
+
+function displayResult(resultText) {
+  result.textContent = resultText;
+  document.getElementById('daysbetween').style.display = 'none';
+  document.getElementById('addsubdays').style.display = 'none';
+  document.getElementById('result-container').style.display = 'block';
+  document.getElementById('tabs').style.display = 'none';}
+
+
+  
 /* --BACK BUTTON ON RESULTS "PAGE"-- */
 
 // Add an event listener for the Back button
@@ -98,6 +180,9 @@ backButton.addEventListener('click', goBack);
 function goBack() {
   location.reload();
 }
+
+
+
 
 /* --RESULTS PAGE FILTERS--*/
 
@@ -119,6 +204,7 @@ function goyellow() {
   console.log("goyellow")
   result.className = 'yellow-text';
 }
+
 
 
 // TAB SWITCHING
@@ -157,52 +243,3 @@ function showAddSubDays() {
   updateTabStates('addSubDays');
 }
 
-// NEW CALCULATOR
-const baseDate = document.getElementById('base-date');
-const baseTodayButton = document.getElementById('base-today');
-const numDays = document.getElementById('num-days');
-const addDaysButton = document.getElementById('add-days');
-const subtractDaysButton = document.getElementById('subtract-days');
-
-baseTodayButton.addEventListener('click', setBaseToday);
-baseDate.addEventListener('input', checkBaseInputs);
-numDays.addEventListener('input', checkBaseInputs);
-addDaysButton.addEventListener('click', addDays);
-subtractDaysButton.addEventListener('click', subtractDays);
-
-function setBaseToday() {
-  const currentDate = new Date();
-  baseDate.valueAsDate = currentDate;
-  checkBaseInputs();
-}
-
-function checkBaseInputs() {
-  if (baseDate.value && numDays.value) {
-    addDaysButton.disabled = false;
-    subtractDaysButton.disabled = false;
-  } else {
-    addDaysButton.disabled = true;
-    subtractDaysButton.disabled = true;
-  }
-}
-
-function addDays() {
-  const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
-  const newDate = baseMoment.add(parseInt(numDays.value), 'days');
-  displayResult(newDate.format('MMMM D, YYYY'));
-}
-
-function subtractDays() {
-  const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
-  const newDate = baseMoment.subtract(parseInt(numDays.value), 'days');
-  displayResult(newDate.format('MMMM D, YYYY'));
-}
-
-//RESULT 
-
-function displayResult(resultText) {
-  result.textContent = resultText;
-  document.getElementById('daysbetween').style.display = 'none';
-  document.getElementById('addsubdays').style.display = 'none';
-  document.getElementById('result-container').style.display = 'block';
-  document.getElementById('tabs').style.display = 'none';}
