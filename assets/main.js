@@ -65,6 +65,8 @@ calculateDaysButton.addEventListener('click', calculateDaysDifference);
 /* STEP 4b Add a function that calculates the days */
 function calculateDaysDifference() {
 
+  
+
     // Log the input field values
     console.log("Date 1: " + date1.value);
     console.log("Date 2: " + date2.value);
@@ -86,9 +88,12 @@ function calculateDaysDifference() {
     document.getElementById('calculator-container').style.display = 'none';
     document.getElementById('result-container').style.display = 'block';
 
+    // Redirect to results.html
+    console.log('Redirecting to results.html');
+    window.location.href = 'results.html';
+
 
 }
-
 
 
 /* --ADD/SUBTRACT DAYS-- */
@@ -170,7 +175,7 @@ function displayResult(resultText) {
   document.getElementById('tabs').style.display = 'none';}
 
 
-  
+
 /* --BACK BUTTON ON RESULTS "PAGE"-- */
 
 // Add an event listener for the Back button
@@ -180,9 +185,6 @@ backButton.addEventListener('click', goBack);
 function goBack() {
   location.reload();
 }
-
-
-
 
 /* --RESULTS PAGE FILTERS--*/
 
