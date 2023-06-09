@@ -52,6 +52,7 @@
   
   /* spacing */
   --padding:20px;
+  --svg-top-padding: 180px;
 
 }
 
@@ -103,6 +104,7 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
@@ -216,9 +218,8 @@ input[type="number"] {
   padding-top: 50px;
   
   flex-direction: column;
-  justify-content: center; !important
-  align-items: center;!important
-
+  justify-content: center; 
+  align-items: center;
 }
 
 .tabs {
@@ -268,9 +269,10 @@ input[type="number"] {
 }
 
 .together {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  height:300px;
+  height:310px;
   justify-content: center;
   align-items: center;
 
@@ -331,8 +333,9 @@ background-color: #B8CFD7 !important;
 /* Flower SVG image as background when button is clicked */
 background-image: url('flower.svg') !important; 
 background-repeat: no-repeat;
-background-position: center 18vh;
-background-size: 200px;
+background-position: center var(--svg-top-padding);
+background-size: 180px;
+transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
 
 }
 
@@ -345,8 +348,9 @@ background-color: #5A5E44 !important;
 /* Mango SVG image as background when button is clicked */
 background-image: url('mango.svg') !important; 
 background-repeat: no-repeat;
-background-position: center 30vh;
-background-size: 200px;
+background-position: center calc(var(--svg-top-padding) + 15px);
+background-size: 150px;
+transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
 
 
 }
