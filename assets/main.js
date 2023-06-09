@@ -97,7 +97,6 @@ function calculateDaysDifference() {
 }
 
 
-
 /* --ADD/SUBTRACT DAYS-- */
 
 /* STEP 1: Define important things
@@ -200,15 +199,15 @@ yellowbutton.addEventListener("click", goyellow);
 
 function goblue() {
   console.log("goblue");
-  result.className = 'blue-text';
-  
-  var mango = document.querySelector("#mango");
-  mango.classList.add("show");
+  document.body.classList.remove('yellow-text'); // Remove yellow class
+  document.body.classList.toggle('blue-text')
+
 }
 
 function goyellow() {
   console.log("goyellow")
-  result.className = 'yellow-text';
+  document.body.classList.remove('blue-text'); // Remove blue class
+  document.body.classList.toggle('yellow-text')
 }
 
 
@@ -221,7 +220,7 @@ const addSubDaysButton = document.getElementById('add-sub-days');
 betweenDaysButton.addEventListener('click', showDaysBetween);
 addSubDaysButton.addEventListener('click', showAddSubDays);
 
-// Add a function to update the tab states
+// function to update the tab states
 function updateTabStates(selectedTab) {
   if (selectedTab === 'betweenDays') {
       betweenDaysButton.classList.add('selected-tab');

@@ -37,7 +37,7 @@
 
   /* typescale */
 
-  --text-xl: 80px;
+--text-xl: 80px;
 --text-lg: calc(var(--text-base)*1.125);
 --text-base: 30px;
 --text-sm: calc(var(--text-base)*0.875);
@@ -64,6 +64,15 @@
   }
 }
 
+/* PARTS OF THE SITE */
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
 /* LINKS */
 
 body {
@@ -73,10 +82,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 /* TYPOGRAPHY */
 
+.days {
+	font-size: 40px;
+	font-family:'Bantayog';
+}
 
 /* BUTTON */
 
@@ -143,38 +157,6 @@ input[type="number"] {
   margin-top: 1rem;
 }
 
-/* RESULTS PAGE "FILTERS */
-
-.filters {
-  display: flex;
-  color: white;
-  margin-bottom: 30px;
-
-}
-
-.filter {
-  height: 20px;
-  width: 20px;
-}
-
-#bluebutton, #yellowbutton {
-  border-radius: 100px;
-  width: 20px;
-
-}
-
-.blue-text {
-color:rgb(33, 33, 94);
-font-family:'Cubao';
-font-size: 70vw;
-}
-
-.yellow-text {
-color:gold;
-font-family:'Cubao';
-font-size: 70vw;
-}
-
 
 .hidden {
   display: none;
@@ -195,6 +177,8 @@ font-size: 70vw;
   background-color: var(--tint);
 }
 
+/* TABS */
+
 .selected-tab {
   color: var(--black);
   font-weight: 500;
@@ -205,12 +189,6 @@ font-size: 70vw;
   
 }
 
-.logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
 
 
 #calculator-container, #addsubdays {
@@ -305,3 +283,55 @@ font-size: 70vw;
   align-items: center;
 
 }
+
+
+
+/* RESULTS PAGE "FILTERS */
+
+.filters {
+  display: flex;
+  color: white;
+  margin-bottom: 30px;
+
+}
+
+.filter {
+  height: 20px;
+  width: 20px;
+}
+
+#bluebutton, #yellowbutton {
+  border-radius: 100px;
+  width: 20px;
+
+}
+
+.blue-text {
+color:rgb(33, 33, 94);
+font-family:'Cubao';
+font-size: 70vw;
+/* blue background color when button is clicked */
+background-color: #B8CFD7 !important; 
+/* Flower SVG image as background when button is clicked */
+background-image: url('flower.svg') !important; 
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 200px;
+
+}
+
+.yellow-text {
+color:white;
+font-family:'Cubao';
+font-size: 70vw;
+/* Yellow background color when button is clicked */
+background-color: #5A5E44 !important; 
+/* Mango SVG image as background when button is clicked */
+background-image: url('mango.svg') !important; 
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 200px;
+
+
+}
+
