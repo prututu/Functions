@@ -51,7 +51,7 @@
   --disabled-text-color: rgba(0, 0, 0, 0.154);
   --disabled-button-color: #f4e9cf;
   --disabled-shadow-color:#22222250;
-  --icon-bg: rgba(222, 222, 206, 0.759);
+  --icon-bg: rgba(255, 255, 255, 0.531);
 
   --tint: rgba(143, 128, 71, 0.11);
   --tint-hover: rgba(143, 129, 71, 0.155);
@@ -206,20 +206,50 @@ input[type="number"] {
 
 #today1,
 #today2,
-#base-today {
+#base-today{
   transition: 0.3s;
   border-radius: 11px;
   color:var(--black);
   background-color: var(--tint);
-  
 }
 
 #today1:hover,
 #today2:hover,
-#base-today:hover {
+#base-today:hover
+{
   transition: 0.3s;
   transform: translate(-0.5px, -0.5px);
   background-color: var(--tint-hover);
+}
+
+#back {
+  transition: 0.3s;
+  border-radius: 11px;
+  color:var(--black);
+  background-color: white;
+  color: #a49a87bb;
+
+
+}
+
+#back:hover {
+  transition: 0.3s;
+  transform: translate(-0.5px, -0.5px);
+  background-color: blue;
+}
+
+/* CLEAR BUTTONS */
+
+#clearButton1,
+#clearButton2 {
+  background-color: rgba(0, 0, 0, 0) !important;
+  font-size: 15px;
+  color: #a49a87bb;
+}
+
+#clearButton1:hover,
+#clearButton2:hover {
+  color: #908776;
 }
 
 /* TABS */
@@ -234,7 +264,11 @@ input[type="number"] {
   
 }
 
-
+#between-days:hover, 
+#add-sub-days:hover {
+  transition: 0.3s;
+  transform: translate(-0.7px, -0.7px);
+}
 
 #calculator-container, #addsubdays {
   margin-top: var(--padding);
@@ -242,10 +276,12 @@ input[type="number"] {
   padding: var(--padding);
   box-shadow: 0px 12.1636px 50px rgba(143, 109, 77, 0.1);
   border-radius: 29px;
-  height: 265px;
   width: 330px;
   padding-top: 50px;
+  padding-bottom: 50px;
   
+
+  position: relative;
   flex-direction: column;
   justify-content: center; 
   align-items: center;
@@ -256,9 +292,9 @@ input[type="number"] {
   display: flex;
   justify-content: center; 
   align-items: center; 
-  margin-top: 50px;
   gap: 0px;
 }
+
 
 .tabs button {
   margin: 0;
@@ -278,12 +314,22 @@ input[type="number"] {
   justify-content: center;
   align-items: center;
   margin-top: 25px;
+}
+
+.center2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
   gap:10px;
 }
 
+
 /* MAIN BUTTONS */
 
-#calculate-days, #add-days, #subtract-days, #back { 
+#calculate-days,
+#add-days,
+#subtract-days { 
   border-radius: 11px;
   color:var(--black);
   font-family: 'Cubao';
@@ -296,7 +342,9 @@ input[type="number"] {
 
 }
 
-#calculate-days:hover, #add-days:hover, #subtract-days:hover, #back:hover { 
+#calculate-days:hover,
+#add-days:hover,
+#subtract-days:hover { 
   transform: translate(-2px, -2px);
   filter: drop-shadow( 0px 0px 0px rgba(0, 0, 0, 0));
 
@@ -354,6 +402,8 @@ input[type="number"] {
   display: flex;
   color: white;
   margin-bottom: 30px;
+  padding: 30px;
+  padding-bottom: 10px;
 
 }
 
@@ -362,17 +412,29 @@ input[type="number"] {
   width: 20px;
 }
 
-#bluebutton, #yellowbutton {
+#bluebutton, #yellowbutton, #sharkbutton {
   border-radius: 50%;
   width: 40px;
   height: 40px;
   background-color:var(--icon-bg);
-  color:#a93b3b00
+  color:#a93b3b00;
+  transition: transform 0.2s ease-in-out;
+
+  border: 2px solid transparent; /* Add transparent border initially */
+  transition: border-color 0.2s ease-in-out; /* Add transition effect for border color */
+}
+
+
+#bluebutton:hover,
+#yellowbutton:hover,
+#sharkbutton:hover, {
+  transform: scale(1.1); /* Increase the scale on hover */
 }
 
 
 #bluebutton svg,
-#yellowbutton svg {
+#yellowbutton svg,
+#sharkbutton svg, {
   width: 100%; /* Adjust the SVG to fit the button */
   height: 100%;
   object-fit: contain; /* Maintain aspect ratio of the SVG */
@@ -392,12 +454,18 @@ input[type="number"] {
   background-size: 20px;
 }
 
+#sharkbutton {
+  background-repeat: no-repeat;
+  background-image: url("sharkicon.svg");
+  background-position: center;
+  background-size: 20px;
+}
+
 .blue-text {
 color:var(--black);
-font-family:'Cubao';
 font-size: 70vw;
 /* blue background color when button is clicked */
-background-color: #B8CFD7 !important; 
+background-color: #F3CBBF !important; 
 /* Flower SVG image as background when button is clicked */
 background-image: url('flower.svg') !important; 
 background-repeat: no-repeat;
@@ -409,7 +477,6 @@ transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out
 
 .yellow-text {
 color:white;
-font-family:'Cubao';
 font-size: 70vw;
 /* Yellow background color when button is clicked */
 background-color: #5A5E44 !important; 
@@ -420,5 +487,18 @@ background-position: center calc(var(--svg-top-padding) + 15px);
 background-size: 150px;
 transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
 
-
 }
+
+.shark-text {
+  color:white;
+  font-size: 70vw;
+  /* Yellow background color when button is clicked */
+  background-color: #233C53!important; 
+  /* Mango SVG image as background when button is clicked */
+  background-image: url('sharkicon.svg') !important; 
+  background-repeat: no-repeat;
+  background-position: center calc(var(--svg-top-padding) + 15px);
+  background-size: 150px;
+  transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  }
+  

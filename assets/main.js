@@ -209,22 +209,48 @@ function goBack() {
 
 const bluebutton = document.getElementById("bluebutton");
 const yellowbutton = document.getElementById("yellowbutton");
+const sharkbutton = document.getElementById("sharkbutton");
 
 bluebutton.addEventListener("click", goblue);
 yellowbutton.addEventListener("click", goyellow);
+sharkbutton.addEventListener("click", goshark);
+
 
 function goblue() {
   console.log("goblue");
-  document.body.classList.remove('yellow-text'); // Remove yellow class
-  document.body.classList.toggle('blue-text')
+  document.body.classList.remove('shark-text');
+  document.body.classList.remove('yellow-text');
+  document.body.classList.toggle('blue-text');
+
+  document.getElementById('bluebutton').style.borderColor = 'white'; // Set border color to white
+  document.getElementById('sharkbutton').style.borderColor = 'transparent'; // Set border color to transparent
+  document.getElementById('yellowbutton').style.borderColor = 'transparent'; // Set border color to transparent
+  
 
 }
 
 function goyellow() {
   console.log("goyellow")
-  document.body.classList.remove('blue-text'); // Remove blue class
-  document.body.classList.toggle('yellow-text')
+  document.body.classList.remove('blue-text'); 
+  document.body.classList.remove('shark-text');
+  document.body.classList.toggle('yellow-text');
+
+  document.getElementById('bluebutton').style.borderColor = 'transparent'; // Set border color to transparent
+  document.getElementById('sharkbutton').style.borderColor = 'transparent'; // Set border color to transparent
+  document.getElementById('yellowbutton').style.borderColor = 'white'; // Set border color to white
 }
+
+function goshark() {
+  console.log("goshark")
+  document.body.classList.remove('blue-text'); 
+  document.body.classList.remove('yellow-text')
+  document.body.classList.toggle('shark-text')
+
+  document.getElementById('bluebutton').style.borderColor = 'transparent'; // Set border color to transparent
+  document.getElementById('sharkbutton').style.borderColor = 'transparent'; // Set border color to transparent
+  document.getElementById('sharkbutton').style.borderColor = 'white'; // Set border color to white
+}
+
 
 
 
@@ -264,3 +290,26 @@ function showAddSubDays() {
   updateTabStates('addSubDays');
 }
 
+
+// CLEAR BUTTONs
+
+// Clear button for the "between days" section
+const clearButton1 = document.getElementById('clearButton1');
+clearButton1.addEventListener('click', clearBetweenDaysInputs);
+
+function clearBetweenDaysInputs() {
+  document.getElementById('date1').value = '';
+  document.getElementById('date2').value = '';
+  calculateDaysButton.disabled = true; // Disable the calculate button
+}
+
+// Clear button for the "add/subtract days" section
+const clearButton2 = document.getElementById('clearButton2');
+clearButton2.addEventListener('click', clearAddSubDaysInputs);
+
+function clearAddSubDaysInputs() {
+  document.getElementById('base-date').value = '';
+  document.getElementById('num-days').value = '';
+  addDaysButton.disabled = true; // Disable the add button
+  subtractDaysButton.disabled = true; // Disable the subtract button
+}
