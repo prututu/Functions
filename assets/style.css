@@ -51,6 +51,7 @@
   --disabled-text-color: rgba(0, 0, 0, 0.154);
   --disabled-button-color: #f4e9cf;
   --disabled-shadow-color:#22222250;
+  --icon-bg: rgba(222, 222, 206, 0.759);
 
   --tint: rgba(143, 128, 71, 0.11);
   --tint-hover: rgba(143, 129, 71, 0.155);
@@ -119,7 +120,7 @@ button:disabled {
   background-color: var(--disabled-button-color) !important;
   color: var(--disabled-text-color) !important;
   cursor: not-allowed;
-  filter: drop-shadow(2.5px 2.5px 0px var(--disabled-shadow-color)) !important;
+  filter: drop-shadow(2.5px 2.5px 0px var(--disabled-shadow-color)) !important
 }
 
 #result {
@@ -362,9 +363,33 @@ input[type="number"] {
 }
 
 #bluebutton, #yellowbutton {
-  border-radius: 100px;
-  width: 20px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color:var(--icon-bg);
+  color:#a93b3b00
+}
 
+
+#bluebutton svg,
+#yellowbutton svg {
+  width: 100%; /* Adjust the SVG to fit the button */
+  height: 100%;
+  object-fit: contain; /* Maintain aspect ratio of the SVG */
+}
+
+#bluebutton {
+  background-repeat: no-repeat;
+  background-image: url("flowericon.svg");
+  background-position: center;
+  background-size: 30px;
+}
+
+#yellowbutton {
+  background-repeat: no-repeat;
+  background-image: url("mango.svg");
+  background-position: center;
+  background-size: 20px;
 }
 
 .blue-text {
