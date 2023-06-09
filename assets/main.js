@@ -1,3 +1,5 @@
+
+
 /* --CALCULATE DAYS BETWEEN DATES-- */
 
 /* STEP 1: Define important things
@@ -65,8 +67,6 @@ calculateDaysButton.addEventListener('click', calculateDaysDifference);
 /* STEP 4b Add a function that calculates the days */
 function calculateDaysDifference() {
 
-  
-
     // Log the input field values
     console.log("Date 1: " + date1.value);
     console.log("Date 2: " + date2.value);
@@ -88,12 +88,14 @@ function calculateDaysDifference() {
     document.getElementById('calculator-container').style.display = 'none';
     document.getElementById('result-container').style.display = 'block';
 
-    // Redirect to results.html
-    console.log('Redirecting to results.html');
-    window.location.href = 'results.html';
-
+    // hide tabs
+    document.getElementById('daysbetween').style.display = 'none';
+    document.getElementById('addsubdays').style.display = 'none';
+    document.getElementById('result-container').style.display = 'block';
+    document.getElementById('tabs').style.display = 'none';
 
 }
+
 
 
 /* --ADD/SUBTRACT DAYS-- */
@@ -169,11 +171,12 @@ function subtractDays() {
 
 function displayResult(resultText) {
   result.textContent = resultText;
+
+  // hide tabs
   document.getElementById('daysbetween').style.display = 'none';
   document.getElementById('addsubdays').style.display = 'none';
   document.getElementById('result-container').style.display = 'block';
   document.getElementById('tabs').style.display = 'none';}
-
 
 
 /* --BACK BUTTON ON RESULTS "PAGE"-- */
@@ -185,6 +188,7 @@ backButton.addEventListener('click', goBack);
 function goBack() {
   location.reload();
 }
+
 
 /* --RESULTS PAGE FILTERS--*/
 
