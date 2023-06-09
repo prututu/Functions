@@ -87,6 +87,7 @@ function calculateDaysDifference() {
 
     document.getElementById('calculator-container').style.display = 'none';
     document.getElementById('result-container').style.display = 'block';
+    document.getElementById('result').style.fontSize = 'px';
 
     // hide tabs
     document.getElementById('daysbetween').style.display = 'none';
@@ -162,13 +163,13 @@ function checkBaseInputs() {
 
 function addDays() {
   const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
-  const newDate = baseMoment.add(parseInt(numDays.value), 'days');
+  const newDate = baseMoment.add(parseInt(numDays.value));
   displayResult(newDate.format('MMMM D, YYYY'));
 }
 
 function subtractDays() {
   const baseMoment = moment(baseDate.value, "YYYY-MM-DD");
-  const newDate = baseMoment.subtract(parseInt(numDays.value), 'days');
+  const newDate = baseMoment.subtract(parseInt(numDays.value));
   displayResult(newDate.format('MMMM D, YYYY'));
 }
 
@@ -181,9 +182,17 @@ function displayResult(resultText) {
   document.getElementById('daysbetween').style.display = 'none';
   document.getElementById('addsubdays').style.display = 'none';
   document.getElementById('result-container').style.display = 'block';
-  document.getElementById('tabs').style.display = 'none';}
+  document.getElementById('tabs').style.display = 'none';
 
-  document.getElementById('result').style.fontSize = '10px';
+//smaller font size
+  document.getElementById('result').style.fontSize = '30px';
+  
+
+//hide 'days'
+  console.log('hide days')
+  document.getElementById('days').style.display = 'none';
+
+}
 
 /* --BACK BUTTON ON RESULTS "PAGE"-- */
 
